@@ -2,10 +2,15 @@
 import subprocess as sb
 import http.server
 import socketserver
+import sys
 
 default_port = 8080
 handler = http.server.SimpleHTTPRequestHandler
-tcp_server = socketserver.TCPServer(("", default_port), handler)
+try:
+    tcp_server = socketserver.TCPServer(("", default_port), handler)
+except Exception:
+    print("\nServer failed to start, please ensure that the website is not opened on your machine or any other, if so, close the tabs and try again\n")
+    sys.exit(1)
 
 def get_ip_address():
     try:
@@ -20,4 +25,7 @@ def main():
     tcp_server.serve_forever()
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nServer closed\n")
