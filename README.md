@@ -9,7 +9,7 @@ Steps to setup your own:
 
 Note: if you are a windows user, you have to find your external ip address and then type:
 
-http://<your-external-ip-address>:8080/home.html
+http://your-external-ip-address:8080/home.html
 
 to run the website on other machine (other than the deployed TCP server), you ca simply access the website from your machine on
 which server is deployed, you can simply type:
