@@ -1,6 +1,27 @@
 <html>
 <head><title>Home</title></head>
 <body>
-    <h1>This is home, this is incredible !</h1>
-    <a href = "https://www.camel-cases.blogspot.com">link</a>
+    <div id = "text"><h1>This is home, this is incredible !</h1></div>
+    <div id = "link">
+    <a href = "http://www.camel-cases.blogspot.com">My Website</a>
+    </div>
+    <script>
+        var text = document.getElementById("text");
+        var body = document.body;
+        body.textAlign = "center";
+        var count = 0;
+        window.setInterval(changeColor, 4000)
+        function changeColor() {
+            count += 1;
+            if (count % 2 == 0) {
+                body.style.backgroundColor = "red";
+                body.style.color = "yellow";
+                text.innerHTML = "<h1>Hello, World!</h1>";
+            } else {
+                body.style.backgroundColor = "yellow";
+                body.style.color = "black";
+                text.innerHTML = "<h1>Hello, Client!</h1>";
+            }
+        }
+    </script>
 </body>
