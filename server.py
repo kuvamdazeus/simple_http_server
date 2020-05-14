@@ -1,5 +1,4 @@
 #! /usr/bin/env python3
-import subprocess as sb
 import http.server
 import socketserver
 import sys
