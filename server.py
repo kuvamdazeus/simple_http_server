@@ -3,6 +3,7 @@ import subprocess as sb
 import http.server
 import socketserver
 import sys
+import socket
 
 default_port = 8080
 # defining a simple HTTP request handler, handles requests over HTTP
@@ -14,11 +15,8 @@ except Exception:
     sys.exit(1)
 
 def get_ip_address(): # gets ip address but the command runs only in unix based OS's (hope so!)
-    try:
-        result = sb.run(["ipconfig", "getifaddr", "en0"], capture_output = True)
-        return result.stdout.decode().strip() # extracts text from the captured ip address
-    except Exception: # if command failed to run, this exception is the life saver
-        return "localhost:8080/home.html"
+    ip = socket.gethostbyname(socket.gethostname())
+    return ip
 
 def main(): # main function does all required things to bring our new tcp_server on track and running
     print("Website: http://{}:{}/home.html".format(get_ip_address(), default_port))
