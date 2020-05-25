@@ -2,10 +2,11 @@
 """Note: This server uses 8080 as default port"""
 import http.server, sys, socketserver, socket, re
 
-print(sys.argv)
-args = sys.argv.pop(0)
-print(args, type(args))
-port_pattern, address_pattern = r"([0-9]*)", r"(^[a-zA-Z][0-9a-zA-Z\.\-_]*)"
+args = sys.argv
+args.pop(0)
+args = " ".join(args)
+print(args)
+port_pattern, address_pattern = r"([0-9]+)", r"(^[a-zA-Z][0-9a-zA-Z\.\-_]+)"
 # searching for patterns in args (argv) list
 server_address = re.search(address_pattern, args)
 port = re.search(port_pattern, args)
@@ -16,7 +17,8 @@ address = ""
 if server_address != None:
     address = server_address.group(1)
 if port != None:
-    default_port = port.group(1)
+    default_port = int(port.group(1).strip())
+print(address, default_port)
 # defining a simple HTTP request handler, handles requests over HTTP
 handler = http.server.SimpleHTTPRequestHandler
 try:
