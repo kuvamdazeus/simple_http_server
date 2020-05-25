@@ -3,7 +3,10 @@
 import http.server, sys, socketserver, socket, re
 
 print(sys.argv)
-args = sys.argv.pop(0)
+args = sys.argv
+args.pop(0)
+args = " ".join(args)
+print(f"|{args}|")
 print(args, type(args))
 port_pattern, address_pattern = r"([0-9]*)", r"(^[a-zA-Z][0-9a-zA-Z\.\-_]*)"
 # searching for patterns in args (argv) list
