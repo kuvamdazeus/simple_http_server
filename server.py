@@ -25,7 +25,9 @@ try:
 except Exception as error:
     message = str(error)
     if "already in use" in message:
-        print("\nServer failed to start, please ensure that the website is not opened on your machine or any other, if so, close the tabs and try again\n")
+        print("\nServer failed to start, please ensure that the website is not opened on your machine or any other, if so, close the tabs and try again")
+        print("you can fix this problem either by given explanation or by changing the port number by passing the specified as CLI argument")
+        print("Like this: ./server.py <your-port-number> or ./server.py 7000 <-- example")
     else:
         print("Error message:", message)
     sys.exit(1)
