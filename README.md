@@ -1,3 +1,5 @@
+#### Quick instructions: just give executable permissions to it and type ./server.py in your CLI --have-fun
+---------------------
 # simple_http_server
 -----------------------
 
