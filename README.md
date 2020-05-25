@@ -14,15 +14,16 @@ Steps to setup your own:
 
 to run the website on other machine (other than the deployed TCP server), you ca simply access the website from your machine on
 which server is deployed, you can simply type:
+the port 8080 will only work if you didn't changed it, if it was changed, you have to enter that port instead of 8080
 
-localhost:8080/home.html
-
-or
-
-127.0.0.1:8080/home.html
+localhost:8080/
 
 or
 
-192.168.2.1:8080/home.html
+127.0.0.1:8080/
 
-Note: you can modify the home.html file and add more files in the same directory
+or
+
+192.168.2.1:8080/
+
+Note: you can modify the index.html file and add more files in the same directory
