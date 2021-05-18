@@ -24,8 +24,4 @@ or
 
 127.0.0.1:8080/
 
-or
-
-192.168.2.1:8080/
-
 Note: you can modify the index.html file and add more files in the same directory
